@@ -28,6 +28,9 @@ class CadastroActivity : Activity() {
         var lista: ListUsuario
         lista = ListUsuario()
 
+
+
+
         if (nome.text.toString().isNullOrEmpty() && peso.text.toString().isNullOrEmpty()) {
         }
 

@@ -149,6 +149,18 @@
                 android:layout_marginRight="20dp"
                 android:background="@drawable/buttonshape"
         />
+        <Button
+                android:id="@+id/idLimpar"
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Limpar"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/buttonshape"
+        />
+
+
     </LinearLayout>
 
     <TextView
