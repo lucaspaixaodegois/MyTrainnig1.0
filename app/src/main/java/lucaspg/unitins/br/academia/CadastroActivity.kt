@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_cadastro.*
+import kotlinx.android.synthetic.main.activity_login.*
 
 
 class CadastroActivity : Activity() {
@@ -20,15 +21,13 @@ class CadastroActivity : Activity() {
         var altura = findViewById<EditText>(R.id.idAltura)
         var login = findViewById<EditText>(R.id.idLogin)
         var senha = findViewById<EditText>(R.id.idSenha)
+        var btSalvar = findViewById<Button>(R.id.idSalvar)
+        var btLimpar = findViewById<Button>(R.id.idLimpar)
 
         var btVoltar = findViewById<Button>(R.id.idVoltar)
-        var btSalvar = findViewById<Button>(R.id.idSalvar)
-
         var usuario: Usuario
         var lista: ListUsuario
         lista = ListUsuario()
-
-
 
 
         if (nome.text.toString().isNullOrEmpty() && peso.text.toString().isNullOrEmpty()) {
@@ -65,6 +64,12 @@ class CadastroActivity : Activity() {
 
         })
 
-
+        fun Limpar() {
+            idNome.setText("")
+            idPeso.setText("")
+            idAltura.setText("")
+            idLogin.setText("")
+            idSenha.setText("")
+        }
     }
 }
