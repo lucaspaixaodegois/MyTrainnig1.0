@@ -31,8 +31,6 @@ class CadastroActivity : Activity() {
         if (nome.text.toString().isNullOrEmpty() && peso.text.toString().isNullOrEmpty()) {
         }
 
-
-
         btSalvar.setOnClickListener(View.OnClickListener {
             if (nome.text.toString().isNullOrEmpty() && peso.text.toString().isNullOrEmpty() && altura.text.toString().isNullOrEmpty()
                 && login.text.toString().isNullOrEmpty() && senha.text.toString().isNullOrEmpty()

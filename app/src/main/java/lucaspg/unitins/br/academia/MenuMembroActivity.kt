@@ -12,8 +12,8 @@ class MenuMembroActivity : AppCompatActivity() {
         setContentView(R.layout.activity_menu_membro)
 
 
-        var btnExercicioBiceps = findViewById<Button>(R.id.btnBiceps)
-        btnExercicioBiceps.setOnClickListener { biceps() }
+        var btnExercicioVoltar = findViewById<Button>(R.id.idVoltar)
+        btnExercicioVoltar.setOnClickListener { voltar() }
 
         var btnExercicioAbdominal = findViewById<Button>(R.id.btnAbdominal)
         btnExercicioAbdominal.setOnClickListener { abdominal() }
@@ -21,6 +21,11 @@ class MenuMembroActivity : AppCompatActivity() {
         var btnExercicioAntebracos = findViewById<Button>(R.id.btnAntebracos)
         btnExercicioAntebracos.setOnClickListener { pernas() }
 
+    }
+
+    fun voltar() {
+        var intent = Intent(applicationContext,MainActivity::class.java)
+        startActivity(intent)
     }
 
     fun abdominal() {
