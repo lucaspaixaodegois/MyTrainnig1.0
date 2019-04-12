@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LoginActivity"
+        android:orientation="vertical">
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/login_icon"
+            android:layout_marginTop="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+
+    />
+
+    <TextView
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:text="Login:"
+            android:textSize="20dp"
+            android:ems="10"
+
+
+    />
+
+    <EditText
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="70dp"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Login aqui..."
+            android:id="@+id/editTextLogin"
+            android:inputType="text"
+            android:textSize="20dp"
+
+    />
+    <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:text="Senha:"
+            android:textSize="20dp"
+
+
+    />
+    <EditText
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="70dp"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Senha aqui"
+            android:id="@+id/tSenha"
+            android:inputType="textPassword"
+            android:textSize="20dp"
+
+    />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                  android:orientation="horizontal"
+                  android:layout_marginTop="110dp"
+                  android:layout_marginLeft="20dp"
+                  android:layout_marginRight="20dp"
+
+
+    >
+        <Button
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btLogin"
+                android:text="Entrar"
+                android:textSize="18dp"
+
+        />
+
+
+        <Button
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCadastrar"
+            android:text="Cadastrar"
+            android:textSize="18dp"
+
+    />
+        <Button
+                android:layout_width="109dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnLimpar"
+                android:text="Limpar"
+                android:textSize="18dp"
+
+        />
+    </LinearLayout>
+
+</LinearLayout>
