@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
 
         var tLogin = findViewById<EditText>(R.id.editTextLogin)
         var tSenha = findViewById<EditText>(R.id.tSenha)
-
+        var tTeste : String = ""
 
         var login = tLogin.text.toString()
         var senha = tSenha.text.toString()
