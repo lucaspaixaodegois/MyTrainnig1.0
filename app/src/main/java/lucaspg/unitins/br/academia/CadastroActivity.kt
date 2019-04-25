@@ -1,6 +1,7 @@
 package lucaspg.unitins.br.academia
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -21,13 +22,20 @@ class CadastroActivity : Activity() {
         var altura = findViewById<EditText>(R.id.idAltura)
         var login = findViewById<EditText>(R.id.idLogin)
         var senha = findViewById<EditText>(R.id.idSenha)
-        var btSalvar = findViewById<Button>(R.id.idSalvar)
-        var btLimpar = findViewById<Button>(R.id.idLimpar)
+        var btSalvar = findViewById<Button>(R.id.btnSalvar)
 
-        var btVoltar = findViewById<Button>(R.id.idVoltar)
+
+        var btLimpar = findViewById<Button>(R.id.btnLimpar)
+        btLimpar.setOnClickListener { Limpar() }
+
+        var btVoltar = findViewById<Button>(R.id.btnVoltar)
+        btVoltar.setOnClickListener {var intent = Intent(applicationContext,MainActivity::class.java)
+            startActivity(intent) }
+
         var usuario: Usuario
         var lista: ListUsuario
         lista = ListUsuario()
+
 
 
         if (nome.text.toString().isNullOrEmpty() && peso.text.toString().isNullOrEmpty()) {
@@ -64,12 +72,13 @@ class CadastroActivity : Activity() {
 
         })
 
-        fun Limpar() {
-            idNome.setText("")
-            idPeso.setText("")
-            idAltura.setText("")
-            idLogin.setText("")
-            idSenha.setText("")
-        }
+
+    }
+    fun Limpar() {
+        idNome.setText("")
+        idPeso.setText("")
+        idAltura.setText("")
+        idLogin.setText("")
+        idSenha.setText("")
     }
 }

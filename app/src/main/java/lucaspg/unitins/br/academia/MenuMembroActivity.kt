@@ -12,7 +12,7 @@ class MenuMembroActivity : AppCompatActivity() {
         setContentView(R.layout.activity_menu_membro)
 
 
-        var btnExercicioVoltar = findViewById<Button>(R.id.idVoltar)
+        var btnExercicioVoltar = findViewById<Button>(R.id.btnVoltar)
         btnExercicioVoltar.setOnClickListener { voltar() }
 
         var btnExercicioAbdominal = findViewById<Button>(R.id.btnAbdominal)
