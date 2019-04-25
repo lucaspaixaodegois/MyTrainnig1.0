@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
     fun Logar() {
 
         var tLogin = findViewById<EditText>(R.id.editTextLogin)
-        var tSenha = findViewById<EditText>(R.id.tSenha)
+        var tSenha = findViewById<EditText>(R.id.editTextSenha)
 
 
         var login = tLogin.text.toString()
@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
     fun Limpar() {
 
         editTextLogin.setText("")
-        tSenha.setText("")
+        editTextSenha.setText("")
         editTextLogin.requestFocus()
     }
 

@@ -54,7 +54,7 @@
             android:layout_marginRight="20dp"
             android:paddingLeft="20dp"
             android:hint="Digite sua senha..."
-            android:id="@+id/tSenha"
+            android:id="@+id/editTextSenha"
             android:inputType="textPassword"
             android:drawableLeft="@drawable/senha_text_icon"
 

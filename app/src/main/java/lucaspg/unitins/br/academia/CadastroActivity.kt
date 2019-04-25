@@ -3,12 +3,10 @@ package lucaspg.unitins.br.academia
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_cadastro.*
-import kotlinx.android.synthetic.main.activity_login.*
-
 
 class CadastroActivity : Activity() {
 
@@ -16,69 +14,84 @@ class CadastroActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro)
 
-
         var nome = findViewById<EditText>(R.id.idNome)
         var peso = findViewById<EditText>(R.id.idPeso)
         var altura = findViewById<EditText>(R.id.idAltura)
         var login = findViewById<EditText>(R.id.idLogin)
         var senha = findViewById<EditText>(R.id.idSenha)
-        var btSalvar = findViewById<Button>(R.id.btnSalvar)
+        var usuario: Usuario
+        var lista: ListUsuario
 
+        fun Salvar() {
+
+            lista = ListUsuario()
+
+            if((nome.text.toString().isNullOrEmpty())||(peso.text.toString().isNullOrEmpty())||(altura.text.toString().isNullOrEmpty())
+                ||(login.text.toString().isNullOrEmpty())||(senha.text.toString().isNullOrEmpty())) {
+                alert("Favor preencher todos os campos!")
+
+
+                if (nome.text.toString().isNullOrEmpty()) {
+                    idNome.requestFocus()
+                }
+                if (peso.text.toString().isNullOrEmpty()) {
+                    idPeso.requestFocus()
+                }
+                if (altura.text.toString().isNullOrEmpty()) {
+                    idAltura.requestFocus()
+                }
+                if (login.text.toString().isNullOrEmpty()) {
+                    idNome.requestFocus()
+                }
+                if (senha.text.toString().isNullOrEmpty()) {
+                    idSenha.requestFocus()
+                }
+            }
+            else
+            {
+                    usuario = Usuario(
+                         nome.text.toString(), peso.text.toString().toDouble(), altura.text.toString().toDouble(),
+                         login.text.toString(), senha.text.toString()
+                    )
+
+                    lista.add(usuario)
+
+                    idNome.setText("")
+                    idPeso.setText("")
+                    idAltura.setText("")
+                    idLogin.setText("")
+                    idSenha.setText("")
+                    idLista.setText(usuario.nome)
+            }
+        }
+        var btSalvar = findViewById<Button>(R.id.btnSalvar)
+        btSalvar.setOnClickListener { Salvar() }
 
         var btLimpar = findViewById<Button>(R.id.btnLimpar)
         btLimpar.setOnClickListener { Limpar() }
 
         var btVoltar = findViewById<Button>(R.id.btnVoltar)
-        btVoltar.setOnClickListener {var intent = Intent(applicationContext,MainActivity::class.java)
-            startActivity(intent) }
-
-        var usuario: Usuario
-        var lista: ListUsuario
-        lista = ListUsuario()
-
-
-
-        if (nome.text.toString().isNullOrEmpty() && peso.text.toString().isNullOrEmpty()) {
+        btVoltar.setOnClickListener {
+            var intent = Intent(applicationContext, MainActivity::class.java)
+            startActivity(intent)
         }
 
-        btSalvar.setOnClickListener(View.OnClickListener {
-            if (nome.text.toString().isNullOrEmpty() && peso.text.toString().isNullOrEmpty() && altura.text.toString().isNullOrEmpty()
-                && login.text.toString().isNullOrEmpty() && senha.text.toString().isNullOrEmpty()
-            ) {
 
-                idNome.setText("Digite Nome")
-                idPeso.setText("Digite Peso")
-                idAltura.setText("Digite Altura")
-                idLogin.setText("Digite Login")
-                idSenha.setText("")
-                idLista.setText("Preencha todos os campos por favor!")
 
-                return@OnClickListener
-            }
-            usuario = Usuario(
-                nome.text.toString(), peso.text.toString().toDouble(), altura.text.toString().toDouble(),
-                login.text.toString(), senha.text.toString()
-            )
-
-            lista.add(usuario)
-
-            idNome.setText("")
-            idPeso.setText("")
-            idAltura.setText("")
-            idLogin.setText("")
-            idSenha.setText("")
-
-            idLista.setText(usuario.nome)
-
-        })
 
 
     }
     fun Limpar() {
-        idNome.setText("")
-        idPeso.setText("")
-        idAltura.setText("")
-        idLogin.setText("")
-        idSenha.setText("")
+    idNome.setText("")
+    idPeso.setText("")
+    idAltura.setText("")
+    idLogin.setText("")
+    idSenha.setText("")
+    idNome.requestFocus()
     }
+
+    fun alert(msg: String) {
+    Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
+
 }
