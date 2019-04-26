@@ -76,5 +76,14 @@
                 android:layout_height="150dp"
                 android:id="@+id/btnPernas"
                 android:layout_weight="1"/>
+
+
     </LinearLayout>
+    <Button
+            android:layout_marginLeft="20dp"
+            android:text="Cadastrar treino"
+            android:layout_width="370dp"
+            android:layout_height="150dp"
+            android:id="@+id/btnCadastrar"
+            android:layout_weight="1"/>
 </LinearLayout>
