@@ -9,6 +9,8 @@
             android:roundIcon="@mipmap/xxhdpi_unifit"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".ExercicioAbdominalActivity">
+        </activity>
         <activity android:name=".ExercicioPernasActivity">
         </activity>
         <activity android:name=".ExercioPernasActivity">
