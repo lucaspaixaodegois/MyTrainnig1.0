@@ -30,7 +30,6 @@ class CadastroActivity : Activity() {
                 ||(login.text.toString().isNullOrEmpty())||(senha.text.toString().isNullOrEmpty())) {
                 alert("Favor preencher todos os campos!")
 
-
                 if (nome.text.toString().isNullOrEmpty()) {
                     idNome.requestFocus()
                 }
@@ -77,9 +76,6 @@ class CadastroActivity : Activity() {
             var intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
         }
-
-
-
 
 
     }

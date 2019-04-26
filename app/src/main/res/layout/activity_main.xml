@@ -67,7 +67,7 @@
         <Button
                 android:layout_width="105dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/btLogin"
+                android:id="@+id/btnEntrar"
                 android:text="Entrar"
                 android:textSize="18dp"
                 android:textColor="@color/textLoginSenha"
