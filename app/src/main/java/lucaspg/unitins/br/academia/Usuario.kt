@@ -1,6 +1,8 @@
 package lucaspg.unitins.br.academia
 
-class Usuario {
+import java.io.Serializable
+
+class Usuario  {
 
     var nome: String = ""
     var peso: Double=0.0

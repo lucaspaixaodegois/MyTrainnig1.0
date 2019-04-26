@@ -14,31 +14,36 @@ class MainActivity : AppCompatActivity() {
 
     var usuarios: ArrayList<Usuario> = arrayListOf()
     lateinit var usuario: Usuario
+    lateinit var lt: ListUsuario
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         var tLogin = findViewById<EditText>(R.id.editTextLogin)
         var tSenha = findViewById<EditText>(R.id.editTextSenha)
 
         var btEntrar = findViewById<Button>(R.id.btnEntrar)
-        btEntrar.setOnClickListener { Logar(tLogin, tSenha) }
+        btEntrar.setOnClickListener { Logar(tLogin, tSenha, lt) }
 
         var btCadastrar = findViewById<Button>(R.id.btnCadastrar)
-        btCadastrar.setOnClickListener { Cadastrar() }
+        btCadastrar.setOnClickListener {
+            Cadastrar()
+        }
 
         var btLimpar = findViewById<Button>(R.id.btnLimpar)
         btLimpar.setOnClickListener { Limpar() }
     }
 
 
-    fun Logar(tLogin: EditText, tSenha: EditText) {
+    fun Logar(tLogin: EditText, tSenha: EditText, lista: ListUsuario) {
 
         var login = tLogin.text.toString()
         var senha = tSenha.text.toString()
-
-        for(usuario : Usuario in usuarios) {
+        lt = intent.getSerializableExtra("listaUsuario") as ListUsuario
+        print(lista.usuarios[0].login)
+        for (usuario: Usuario in usuarios) {
 
             if (login.equals(usuario.login) && senha.equals(usuario.senha)) {
                 var intent = Intent(applicationContext, CadastroActivity::class.java)

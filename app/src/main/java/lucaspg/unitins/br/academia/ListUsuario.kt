@@ -1,12 +1,14 @@
 package lucaspg.unitins.br.academia
 
-class ListUsuario {
+import java.io.Serializable
 
-    var usuarios:ArrayList<Usuario> = arrayListOf()
+class ListUsuario : Serializable {
+
+    var usuarios: ArrayList<Usuario> = arrayListOf()
     var cont: Int = 0
 
 
-    fun add(novo_usuario: Usuario){
+    fun add(novo_usuario: Usuario) {
         usuarios.add(novo_usuario)
     }
 
