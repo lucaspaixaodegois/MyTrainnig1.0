@@ -40,7 +40,7 @@ class CadastroActivity : Activity() {
 
     fun Salvar(lista: ListUsuario, nome: EditText, peso: EditText, altura: EditText, login: EditText, senha: EditText) {
 
-        lista
+       // lista
 
         if ((nome.text.toString().isNullOrEmpty()) || (peso.text.toString().isNullOrEmpty()) || (altura.text.toString().isNullOrEmpty())
             || (login.text.toString().isNullOrEmpty()) || (senha.text.toString().isNullOrEmpty())

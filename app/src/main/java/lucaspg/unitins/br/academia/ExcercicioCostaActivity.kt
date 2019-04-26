@@ -6,20 +6,19 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 
-class ExercicioCostaActivity : AppCompatActivity() {
+class ExcercicioCostaActivity : AppCompatActivity() {
 
     var count: Int = 0
     lateinit var option: Spinner
     lateinit var result: TextView
     lateinit var repetir: TextView
     lateinit var nrepetir: TextView
-    lateinit var btncont : Button
-    lateinit var btncont2 : Button
+    lateinit var btncont: Button
+    lateinit var btncont2: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_exercicio_pernas)
-
+        setContentView(R.layout.activity_excercicio_costa)
 
 
         option = findViewById(R.id.spinner1) as Spinner
@@ -33,7 +32,7 @@ class ExercicioCostaActivity : AppCompatActivity() {
         btncont2.setBackgroundColor(Color.RED)
 
         var options = arrayOf("")
-        var prencher: String = "Costa" // Ao clicar
+        var prencher: String = "Costas" // Ao clicar
         fun verificaString(campo: String) {
             if (campo.equals("Abdominais") || campo.equals("ABDOMINAIS")) {
 
@@ -134,3 +133,4 @@ class ExercicioCostaActivity : AppCompatActivity() {
         }
     }
 }
+

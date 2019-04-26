@@ -57,8 +57,7 @@ class ExercicioAbdominalActivity : AppCompatActivity() {
             }
             if (campo.equals("Pernas") || campo.equals("PERNAS")) {
 
-                options =
-                    arrayOf("Exercicios", "Leg press ", "Agachamento na máquina", "Agachamento hack ", "Agachamento")
+                options = arrayOf("Exercicios", "Leg press ", "Agachamento na máquina", "Agachamento hack ", "Agachamento")
             }
         }
         verificaString(prencher)

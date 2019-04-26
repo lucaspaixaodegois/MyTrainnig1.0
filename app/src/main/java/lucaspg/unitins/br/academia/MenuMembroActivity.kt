@@ -26,7 +26,16 @@ class MenuMembroActivity : AppCompatActivity() {
 
         btnExercicioPernas.setOnClickListener { Pernas() }
 
+        btnExercicioAntebracos.setOnClickListener(){ Antebracos() }
+
         btnExercicioAbdominais.setOnClickListener(){ Abdominais() }
+
+        btnExercicioBiceps.setOnClickListener(){ Biceps() }
+
+        btnExercicioCostas.setOnClickListener(){ Costas() }
+
+        btnExercicioPeito.setOnClickListener(){ Abdominais() }
+
 
 
     }
@@ -40,15 +49,15 @@ class MenuMembroActivity : AppCompatActivity() {
         startActivity(intent)
     }
     fun Antebracos() {
-        var intent = Intent(applicationContext, ExercicioPernasActivity::class.java)
+        var intent = Intent(applicationContext, ExercicioAntebracosActivity::class.java)
         startActivity(intent)
     }
     fun Biceps() {
-        var intent = Intent(applicationContext, ExercicioPernasActivity::class.java)
+        var intent = Intent(applicationContext, ExcercicioBicepsActivity::class.java)
         startActivity(intent)
     }
     fun Costas() {
-        var intent = Intent(applicationContext, ExercicioPernasActivity::class.java)
+        var intent = Intent(applicationContext, ExcercicioCostaActivity::class.java)
         startActivity(intent)
     }
     fun Peito() {

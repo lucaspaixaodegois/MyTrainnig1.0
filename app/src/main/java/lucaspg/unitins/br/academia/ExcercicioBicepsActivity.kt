@@ -6,19 +6,20 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 
-class ExercicioPeitoActivity : AppCompatActivity() {
+class ExcercicioBicepsActivity : AppCompatActivity() {
+
 
     var count: Int = 0
     lateinit var option: Spinner
     lateinit var result: TextView
     lateinit var repetir: TextView
     lateinit var nrepetir: TextView
-    lateinit var btncont : Button
-    lateinit var btncont2 : Button
+    lateinit var btncont: Button
+    lateinit var btncont2: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_exercicio_pernas)
+        setContentView(R.layout.activity_excercicio_biceps)
 
 
 
@@ -33,7 +34,7 @@ class ExercicioPeitoActivity : AppCompatActivity() {
         btncont2.setBackgroundColor(Color.RED)
 
         var options = arrayOf("")
-        var prencher: String = "Peito" // Ao clicar
+        var prencher: String = "Biceps" // Ao clicar
         fun verificaString(campo: String) {
             if (campo.equals("Abdominais") || campo.equals("ABDOMINAIS")) {
 
