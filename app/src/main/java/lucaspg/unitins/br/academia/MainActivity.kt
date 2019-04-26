@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -64,6 +65,8 @@ class MainActivity : AppCompatActivity() {
         editTextLogin.setText("")
         editTextSenha.setText("")
         editTextLogin.requestFocus()
+        var intent = Intent(applicationContext, MenuMembroActivity::class.java)
+        startActivity(intent)
     }
 
     fun alert(msg: String) {

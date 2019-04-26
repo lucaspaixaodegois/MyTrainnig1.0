@@ -34,7 +34,7 @@ class ExercicioPernasActivity : AppCompatActivity() {
         btncont2.setBackgroundColor(Color.RED)
 
         var options = arrayOf("")
-        var prencher: String = "Biceps" // Ao clicar
+        var prencher: String = "Pernas" // Ao clicar
         fun verificaString(campo: String) {
             if (campo.equals("Abdominais") || campo.equals("ABDOMINAIS")) {
 
