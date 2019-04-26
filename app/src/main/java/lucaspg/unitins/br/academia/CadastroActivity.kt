@@ -50,7 +50,8 @@ class CadastroActivity : Activity() {
             else
             {
                     usuario = Usuario(
-                         nome.text.toString(), peso.text.toString().toDouble(), altura.text.toString().toDouble(),
+                         nome.text.toString(), peso.text.toString().toDouble(),
+                         altura.text.toString().toDouble(),
                          login.text.toString(), senha.text.toString()
                     )
 
@@ -62,6 +63,7 @@ class CadastroActivity : Activity() {
                     idLogin.setText("")
                     idSenha.setText("")
                     idLista.setText(usuario.nome)
+                alert("Usuário cadastrado com sucesso!")
             }
         }
         var btSalvar = findViewById<Button>(R.id.btnSalvar)
