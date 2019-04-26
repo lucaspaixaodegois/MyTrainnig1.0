@@ -26,8 +26,9 @@ class CadastroActivity : Activity() {
 
             lista = ListUsuario()
 
-            if((nome.text.toString().isNullOrEmpty())||(peso.text.toString().isNullOrEmpty())||(altura.text.toString().isNullOrEmpty())
-                ||(login.text.toString().isNullOrEmpty())||(senha.text.toString().isNullOrEmpty())) {
+            if ((nome.text.toString().isNullOrEmpty()) || (peso.text.toString().isNullOrEmpty()) || (altura.text.toString().isNullOrEmpty())
+                || (login.text.toString().isNullOrEmpty()) || (senha.text.toString().isNullOrEmpty())
+            ) {
                 alert("Favor preencher todos os campos!")
 
                 if (nome.text.toString().isNullOrEmpty()) {
@@ -45,26 +46,41 @@ class CadastroActivity : Activity() {
                 if (senha.text.toString().isNullOrEmpty()) {
                     idSenha.requestFocus()
                 }
-            }
-            else
-            {
-                    usuario = Usuario(
-                         nome.text.toString(), peso.text.toString().toDouble(),
-                         altura.text.toString().toDouble(),
-                         login.text.toString(), senha.text.toString()
-                    )
+            } else {
+                usuario = Usuario(
+                    nome.text.toString(),
+                    peso.text.toString().toDouble(),
+                    altura.text.toString().toDouble(),
+                    login.text.toString(),
+                    senha.text.toString()
+                )
+                usuario.nome = nome.text.toString()
+                usuario.login = login.text.toString()
+                usuario.altura = altura.text.toString().toDouble()
+                usuario.peso = peso.text.toString().toDouble()
+                usuario.senha = senha.text.toString()
 
-                    lista.add(usuario)
 
-                    idNome.setText("")
-                    idPeso.setText("")
-                    idAltura.setText("")
-                    idLogin.setText("")
-                    idSenha.setText("")
-                    idLista.setText(usuario.nome)
+                lista.add(usuario)
+
+                idNome.setText("")
+                idPeso.setText("")
+                idAltura.setText("")
+                idLogin.setText("")
+                idSenha.setText("")
+                idLista.setText(usuario.nome)
+
+                // nome.setText(usuario.nome)
+                nome.setText(lista.usuarios[0].nome.toString())
+                peso.setText(lista.usuarios[0].peso.toString())
+                altura.setText(lista.usuarios[0].altura.toString())
+                login.setText(lista.usuarios[0].login.toString())
+                senha.setText(lista.usuarios[0].senha.toString())
+
                 alert("Usuário cadastrado com sucesso!")
             }
         }
+
         var btSalvar = findViewById<Button>(R.id.btnSalvar)
         btSalvar.setOnClickListener { Salvar() }
 
@@ -79,17 +95,18 @@ class CadastroActivity : Activity() {
 
 
     }
+
     fun Limpar() {
-    idNome.setText("")
-    idPeso.setText("")
-    idAltura.setText("")
-    idLogin.setText("")
-    idSenha.setText("")
-    idNome.requestFocus()
+        idNome.setText("")
+        idPeso.setText("")
+        idAltura.setText("")
+        idLogin.setText("")
+        idSenha.setText("")
+        idNome.requestFocus()
     }
 
     fun alert(msg: String) {
-    Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 
 }

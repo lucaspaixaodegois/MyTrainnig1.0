@@ -3,6 +3,7 @@ package lucaspg.unitins.br.academia
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -30,41 +31,26 @@ class MainActivity : AppCompatActivity() {
         btLimpar.setOnClickListener { Limpar() }
     }
 
+
     fun Logar(tLogin: EditText, tSenha: EditText) {
 
         var login = tLogin.text.toString()
         var senha = tSenha.text.toString()
-        var intent = Intent(applicationContext, MenuMembroActivity::class.java)
 
-        if (login != null || senha != null) {
+        for(usuario : Usuario in usuarios) {
 
-//            for (usuario: Usuario in usuarios) {
-//                if (login.equals(usuario.login) && senha.equals(usuario.senha)) {
-//                    startActivity(intent)
-//                    alert("Bem Vindo, Acesso Realizado com Sucesso")
-//                } else {
-//
-//                    alert("Login e/ou Senha Incorretos")
-//                }
-//
-//            }
-            if ("a".equals(login) && "a".equals(senha)) {
+            if (login.equals(usuario.login) && senha.equals(usuario.senha)) {
+                var intent = Intent(applicationContext, CadastroActivity::class.java)
                 startActivity(intent)
                 alert("Bem Vindo, Acesso Realizado com Sucesso")
             }
             if ("admin".equals(login) && "123".equals(senha)) {
-                    startActivity(intent)
-                    alert("Bem Vindo, Acesso Realizado com Sucesso")
+                var intent = Intent(applicationContext, CadastroActivity::class.java)
+                startActivity(intent)
+                alert("Bem Vindo, Acesso Realizado com Sucesso")
+            } else {
+                alert("Login e/ou Senha Incorretos")
             }
-            if ("02995812170".equals(login) && "123".equals(senha)) {
-                    startActivity(intent)
-                    alert("Bem Vindo, Acesso Realizado com Sucesso")
-            }
-            else{
-                    alert("Login e/ou Senha Incorretos")
-            }
-
-
         }
     }
 
@@ -86,5 +72,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
+
 
 
