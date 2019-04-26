@@ -3,6 +3,7 @@ package lucaspg.unitins.br.academia
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.content.ContextCompat.startActivity
 import android.util.Log
 import android.view.Menu
 import android.widget.Button
@@ -20,12 +21,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         var tLogin = findViewById<EditText>(R.id.editTextLogin)
         var tSenha = findViewById<EditText>(R.id.editTextSenha)
 
+
         var btEntrar = findViewById<Button>(R.id.btnEntrar)
-        btEntrar.setOnClickListener { Logar(tLogin, tSenha, lt) }
+        btEntrar.setOnClickListener { Logar(tLogin,tSenha) }
 
         var btCadastrar = findViewById<Button>(R.id.btnCadastrar)
         btCadastrar.setOnClickListener {
@@ -37,19 +38,13 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun Logar(tLogin: EditText, tSenha: EditText, lista: ListUsuario) {
+    fun Logar(tLogin: EditText, tSenha: EditText) {
 
         var login = tLogin.text.toString()
         var senha = tSenha.text.toString()
-        lt = intent.getSerializableExtra("listaUsuario") as ListUsuario
-        print(lista.usuarios[0].login)
-        for (usuario: Usuario in usuarios) {
 
-            if (login.equals(usuario.login) && senha.equals(usuario.senha)) {
-                var intent = Intent(applicationContext, CadastroActivity::class.java)
-                startActivity(intent)
-                alert("Bem Vindo, Acesso Realizado com Sucesso")
-            }
+
+
             if ("admin".equals(login) && "123".equals(senha)) {
                 var intent = Intent(applicationContext, CadastroActivity::class.java)
                 startActivity(intent)
@@ -58,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                 alert("Login e/ou Senha Incorretos")
             }
         }
-    }
+
 
     fun Cadastrar() {
         var intent = Intent(applicationContext, CadastroActivity::class.java)
@@ -70,8 +65,7 @@ class MainActivity : AppCompatActivity() {
         editTextLogin.setText("")
         editTextSenha.setText("")
         editTextLogin.requestFocus()
-        var intent = Intent(applicationContext, MenuMembroActivity::class.java)
-        startActivity(intent)
+
     }
 
     fun alert(msg: String) {
@@ -80,6 +74,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
+
 
 
 
