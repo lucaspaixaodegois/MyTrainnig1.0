@@ -99,9 +99,6 @@ class CadastroActivity : Activity() {
         }
 
 
-
-
-
     }
     fun Limpar() {
         idNome.setText("")
