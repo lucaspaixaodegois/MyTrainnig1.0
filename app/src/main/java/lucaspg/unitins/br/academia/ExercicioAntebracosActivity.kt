@@ -130,7 +130,6 @@ class ExercicioAntebracosActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show();
             }
-
         }
     }
 }
