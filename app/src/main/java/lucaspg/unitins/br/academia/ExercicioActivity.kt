@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.activity_exercicio.*
 
-
 class ExercicioActivity : AppCompatActivity() {
 
     lateinit var option: Spinner
@@ -28,8 +27,6 @@ class ExercicioActivity : AppCompatActivity() {
         var count: Int = 0
         //print("morri aqui 1")
         //Log.e("Teste","teste1")
-        btncont.setBackgroundColor(Color.CYAN)
-        btncont2.setBackgroundColor(Color.RED)
         var options = arrayOf("")
         var prencher: String = "Biceps" // Ao clicar
         fun verificaString(campo: String) {

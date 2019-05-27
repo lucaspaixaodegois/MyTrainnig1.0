@@ -2,24 +2,8 @@ package lucaspg.unitins.br.academia
 
 import java.io.Serializable
 
-class Usuario  {
-
-    var nome: String = ""
-    var peso: Double=0.0
-    var altura: Double= 0.0
-    var login: String= ""
-    var senha: String= ""
+class Usuario (var nome: String, var peso: Double, var altura: Double, var login: String, var senha: String) : Serializable {
 
 
-
-
-
-    constructor(nome: String, peso: Double,altura: Double,login: String,senha: String){
-        this.nome = nome
-        this.peso = peso
-        this.altura = altura
-        this.login = login
-        this.senha = senha
-    }
 
 }

@@ -12,5 +12,11 @@ class ListUsuario : Serializable {
         usuarios.add(novo_usuario)
     }
 
+    fun createUsuario(){
+
+       // add(Usuario(''))
+    }
+
+
 
 }
